@@ -105,7 +105,7 @@ BerkeleyDB::Easy::Cursor - Cursor to database handle
 
 Most of the functionaly for BerkeleyDB cursors are crammed into a few
 underlying functions, with the behavior specified by a flag. For example, to
-get the next record, you call `c_get` and provide the `DB_NEXT` flag. In
+get the next record, you call C<c_get> and provide the C<DB_NEXT> flag. In
 this module, these are split out into individual wrapper methods, and the
 required flag is provided for you. You can specify additional flags
 and they will be OR'ed together with the default.
@@ -179,7 +179,7 @@ Close the cursor.
 
 =head1 BUGS
 
-This module is functional but unfinished, and not currently being worked on.
+This module is functional but unfinished.
 
 =head1 AUTHOR
 

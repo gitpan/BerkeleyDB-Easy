@@ -193,7 +193,7 @@ if there isn't a dedicated wrapper method to accomplish what you want.
 
 =head1 BUGS
 
-This module is functional but unfinished, and not currently being worked on.
+This module is functional but unfinished.
 
 =head1 AUTHOR
 

@@ -3,7 +3,7 @@ package BerkeleyDB::Easy;
 use strict;
 use warnings;
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 sub import {
     my @args = @_;
@@ -235,7 +235,7 @@ And so our wrapper delcaration expands to the following code:
         return($value);
     }
 
-In BerkeleyDB version < 4.6, there is no `exists()`, so we fake it:
+In BerkeleyDB version < 4.6, there is no C<exists()>, so we fake it:
 
     ['db_get',[K,F],[K,V,F],[T],[N],1,0]
 
@@ -260,16 +260,16 @@ to catch any errors from the module, as it will usually only die in special
 circumstances, so it would be reasonable to compile out these (expensive)
 extra checks if performance were important.
 
-You can also see the difference between how the two methods operate. put()
-takes a key and value, and returns the value upon success and `undef` on failure.
-exists() takes only a key and returns `1` on success and an empty string on
+You can also see the difference between how the two methods operate. C<put()>
+takes a key and value, and returns the value upon success and C<undef> on failure.
+C<exists()> takes only a key and returns C<1> on success and an empty string on
 failure. Currently over 30 methods are defined this way, using a single line
-of code each. See the documentation for BerkeleyDB::Easy::Handle and 
-BerkeleyDB::Easy::Cursor for a full listing.
+of code each. See the documentation for C<BerkeleyDB::Easy::Handle> and 
+C<BerkeleyDB::Easy::Cursor> for a full listing.
 
 =head1 BUGS
 
-This module is functional but unfinished, and not currently being worked on.
+This module is functional but unfinished.
 
 =head1 AUTHOR
 
