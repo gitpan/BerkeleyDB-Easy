@@ -3,7 +3,7 @@ package BerkeleyDB::Easy;
 use strict;
 use warnings;
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 sub import {
     my @args = @_;
@@ -156,35 +156,35 @@ methods for detailed handling.
 
     say $err;
 
-        # [BerkeleyDB::Easy::Handle::get] EINVAL (22): Invalid argument.
-        #   DB_READ_COMMITTED, DB_READ_UNCOMMITTED and DB_RMW require locking
-        #   at error.pl line 16.
+    # [BerkeleyDB::Easy::Handle::get] EINVAL (22): Invalid argument.
+    #   DB_READ_COMMITTED, DB_READ_UNCOMMITTED and DB_RMW require locking
+    #   at error.pl line 16.
 
     say 0 + $err;
 
-        # 22
+    # 22
 
     use Data::Dump;
     dd $err;
 
-        # bless({
-        #   code    => 22,
-        #   desc    => "Invalid argument",
-        #   detail  => "DB_READ_COMMITTED, DB_READ_UNCOMMITTED and DB_RMW require locking",
-        #   file    => "error.pl",
-        #   level   => "BDB_ERROR",
-        #   line    => 16,
-        #   message => "Invalid argument. DB_READ_COMMITTED, DB_READ_UNCOMMITTED and "
-        #            . "DB_RMW require locking",
-        #   name    => "EINVAL",
-        #   package => "main",
-        #   string  => "[BerkeleyDB::Easy::Handle::get] EINVAL (22): Invalid argument. "
-        #            . "DB_READ_COMMITTED, DB_READ_UNCOMMITTED and DB_RMW require locking "
-        #            . "at error.pl line 16.",
-        #   sub     => "BerkeleyDB::Easy::Handle::get",
-        #   time    => 1409926665.1101,
-        #   trace   => "at error.pl line 16.",
-        # }, "BerkeleyDB::Easy::Error")
+    # bless({
+    #   code    => 22,
+    #   desc    => "Invalid argument",
+    #   detail  => "DB_READ_COMMITTED, DB_READ_UNCOMMITTED and DB_RMW require locking",
+    #   file    => "error.pl",
+    #   level   => "BDB_ERROR",
+    #   line    => 16,
+    #   message => "Invalid argument. DB_READ_COMMITTED, DB_READ_UNCOMMITTED and "
+    #            . "DB_RMW require locking",
+    #   name    => "EINVAL",
+    #   package => "main",
+    #   string  => "[BerkeleyDB::Easy::Handle::get] EINVAL (22): Invalid argument. "
+    #            . "DB_READ_COMMITTED, DB_READ_UNCOMMITTED and DB_RMW require locking "
+    #            . "at error.pl line 16.",
+    #   sub     => "BerkeleyDB::Easy::Handle::get",
+    #   time    => 1409926665.1101,
+    #   trace   => "at error.pl line 16.",
+    # }, "BerkeleyDB::Easy::Error")
 
 =head1 IMPLEMENTATION
 
