@@ -2,8 +2,9 @@ package BerkeleyDB::Easy;
 
 use strict;
 use warnings;
+use BerkeleyDB ();
 
-our $VERSION = '0.05';
+our $VERSION = '0.06';
 
 sub import {
     my @args = @_;
@@ -110,7 +111,7 @@ BerkeleyDB::Easy - BerkeleyDB wrapper with Perlish interface and error handling
 =head1 SYNOPSIS
 
     my $db = BerkeleyDB::Easy::Btree->new(
-        -Filename => 'test-easy.db',
+        -Filename => 'test.db',
         -Flags    => DB_CREATE,
     );
 
@@ -145,7 +146,6 @@ Errors are thrown as a versatile structured exception object. It is overloaded
 to stringify as a concise message, numberify into an error code, and has various
 methods for detailed handling.
 
-    use 5.010;
     use BerkeleyDB::Easy;
 
     my $db = BerkeleyDB::Easy::Btree->new();
@@ -154,6 +154,7 @@ methods for detailed handling.
     use Try::Tiny;
     try { $db->get('asdf', 666) } catch { $err = $_ };
 
+    use feature 'say';
     say $err;
 
     # [BerkeleyDB::Easy::Handle::get] EINVAL (22): Invalid argument.
