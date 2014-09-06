@@ -19,8 +19,7 @@ WriteMakefile(
         'Try::Tiny'  => 0,
     },
     PREREQ_PM => {
-        #'ABC'              => 1.6,
-        #'Foo::Bar::Module' => 5.0401,
+        'BerkeleyDB' => 0,
     },
     dist  => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
     clean => { FILES => 'BerkeleyDB-Easy-*' },
